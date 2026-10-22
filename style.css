@@ -1,0 +1,250 @@
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, "Segoe UI", sans-serif;
+  color: #20233b;
+  background: #f8f8fc;
+}
+
+body {
+  margin: 0;
+}
+
+.navbar {
+  height: 76px;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ececf3;
+  background: white;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 800;
+  color: #252541;
+  text-decoration: none;
+}
+
+.logo span,
+.hero h1 span {
+  color: #7765ed;
+}
+
+.privacy {
+  font-size: 13px;
+  color: #55566d;
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  background: #32b987;
+  border-radius: 50%;
+}
+
+main {
+  max-width: 1000px;
+  padding: 55px 24px;
+  margin: auto;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.tag {
+  display: inline-block;
+  background: #eeebff;
+  color: #6553d8;
+  padding: 9px 14px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 7vw, 70px);
+  letter-spacing: -3px;
+  line-height: 1.08;
+  margin: 22px 0 15px;
+}
+
+.hero p,
+.tool-card p,
+.promise p {
+  color: #73748b;
+  line-height: 1.7;
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.tool-card,
+.workspace {
+  background: white;
+  padding: 28px;
+  border: 1px solid #e9e8f3;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px #28204b08;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: #eeebff;
+  color: #7765ed;
+  border-radius: 14px;
+  font-size: 28px;
+}
+
+.tool-card h2 {
+  margin-bottom: 8px;
+}
+
+.tool-card p {
+  min-height: 48px;
+  font-size: 14px;
+}
+
+button {
+  border: 0;
+  padding: 13px 18px;
+  border-radius: 10px;
+  background: #7765ed;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #6250d8;
+}
+
+.workspace {
+  margin-top: 24px;
+}
+
+.upload {
+  min-height: 150px;
+  border: 2px dashed #d7d3ef;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #5f5a86;
+  text-align: center;
+}
+
+.upload-icon {
+  font-size: 32px;
+}
+
+#fileList {
+  margin: 18px 0;
+  overflow-wrap: anywhere;
+}
+
+.promise {
+  text-align: center;
+  margin-top: 65px;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+.promise small {
+  display: block;
+  margin-top: 20px;
+  color: #77778a;
+}
+
+footer {
+  padding: 25px;
+  text-align: center;
+  color: #85859a;
+  font-size: 13px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .tools {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 38px 18px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .navbar {
+    padding: 0 18px;
+  }
+
+  .tool-card p {
+    min-height: auto;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  #wordPreview,
+  #wordPreview * {
+    visibility: visible !important;
+  }
+
+  #wordPreview {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #wordPreview .docx-wrapper {
+    background: white !important;
+    padding: 0 !important;
+  }
+
+  #wordPreview .docx {
+    margin: 0 auto !important;
+    box-shadow: none !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+}

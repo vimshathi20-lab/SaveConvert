@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  
+<title>SafeConvert — Your files stay yours</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="#">SafeConvert<span>.</span></a>
+    <span class="privacy"><span class="dot"></span> Privacy first</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="tag">✦ SIMPLE. PRIVATE. FREE.</div>
+      <h1>Your files.<br><span>Your control.</span></h1>
+      <p>Turn your photos and Word documents into PDFs.
+         Your files stay on your device.</p>
+    </section>
+
+    <section class="tools">
+      <article class="tool-card">
+        <div class="icon">▧</div>
+        <h2>Photos to PDF</h2>
+        <p>Combine multiple photos into one PDF document.</p>
+        <button onclick="openTool('photos')">Choose photos →</button>
+      </article>
+
+      <article class="tool-card">
+        <div class="icon">▤</div>
+        <h2>Word to PDF</h2>
+        <p>Convert Word documents into downloadable PDFs.</p>
+        <button onclick="openTool('word')">Choose Word file →</button>
+      </article>
+    </section>
+
+    <section id="workspace" class="workspace" hidden>
+      <h2 id="toolTitle">Choose your files</h2>
+      <p id="toolDescription"></p>
+      
+        <input
+        id="fileInput"
+        type="file"
+        accept="image/jpeg,image/png,image/webp"
+        multiple
+        hidden
+        />
+
+      <label for="fileInput" class="upload">
+        <span class="upload-icon">↑</span>
+        <strong>Click to select files</strong>
+        <span id="fileHint">Choose files from your device</span>
+      </label>
+      <div id="fileList"></div>
+      <button id="convertBtn" hidden>Convert to PDF →</button>
+      <p id="status" role="status"></p>
+      <div id="wordPreview" hidden></div>
+    </section>
+
+    <section class="promise">
+      <h2>Privacy isn't an extra feature.</h2>
+      <p>It's how we build.</p>
+      <div class="features">
+        <span>✓ No account needed</span>
+        <span>✓ No file uploads</span>
+        <span>✓ No cloud storage</span>
+      </div>
+      <small>Files are intended to be processed locally in your browser.</small>
+    </section>
+  </main>
+
+  <footer>Made for your files, not for collecting them. © 2026</footer>
+<script src="https://unpkg.com/jspdf@3.0.1/dist/jspdf.umd.min.js"></script> 
+<script src="https://unpkg.com/jszip@3.10.1/dist/jszip.min.js"></script>
+<script src="https://unpkg.com/docx-preview@0.3.6/dist/docx-preview.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
